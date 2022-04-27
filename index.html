@@ -69,6 +69,19 @@
     <span class="badge bg-dark">Dark 🔄</span>
 
     <script>
+      var count = 0;
+      $(".badge").on("click", function () {
+        count += 1;
+        console.log(count);
+        if (count % 2 == 1) {
+          $(".badge").html("light");
+        } else {
+          $(".badge").html("dark");
+        }
+      });
+    </script>
+
+    <script>
       function 알림창(구멍, 구멍2) {
         document.getElementById("alert").style.display = 구멍;
         document.getElementById("text").innerText = 구멍2;

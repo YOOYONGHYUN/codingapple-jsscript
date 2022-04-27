@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function 삼육구게임(숫자) {
+        if (숫자 % 9 == 0) {
+          console.log("박수두번");
+        } else if (숫자 % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+
+      삼육구게임(22);
+
+      function 합격했나(개론, 민법) {
+        if (개론 > 100 || 민법 > 100) {
+          alert("돈키딩미맨");
+        } else if (개론 < 40 || 민법 < 40) {
+          console.log("불합격");
+        } else if (개론 + 민법 >= 120) {
+          console.log("합격");
+        } else {
+          console.log("불합격");
+        }
+      }
+
+      합격했나(40, 110);
+    </script>
+  </body>
+</html>

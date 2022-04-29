@@ -25,3 +25,17 @@
   border-radius: 5px;
   padding: 30px;
 }
+
+.slide-container {
+  width: 300vw;
+  display: flex;
+  transition: all 1s;
+}
+
+.slide-box {
+  width: 100vw;
+}
+
+.slide-box img {
+  width: 100%;
+}

@@ -5,9 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer" />
+    <button id="send-answer">제출</button>
+    <p class="info"></p>
     <script>
+      var count = 0;
+      $("#send-answer").on("click", function () {
+        const value = document.getElementById("answer").value;
+        count += 1;
+        if (value == 1335) {
+          alert("성공");
+        } else if (count == 1) {
+          $(".info").html("기회 두번 남았습니다.");
+        } else if (count == 2) {
+          $(".info").html("기회 한번 남았습니다.");
+        } else if (count > 2) {
+          alert("멍청이");
+        }
+        console.log(value);
+        console.log(count);
+      });
+    </script>
+
+    <script>
+      // 삼육구게임
       function 삼육구게임(숫자) {
         if (숫자 % 9 == 0) {
           console.log("박수두번");
@@ -20,6 +50,7 @@
 
       삼육구게임(22);
 
+      // 합격 커트 계산기
       function 합격했나(개론, 민법) {
         if (개론 > 100 || 민법 > 100) {
           alert("돈키딩미맨");
@@ -32,7 +63,25 @@
         }
       }
 
-      합격했나(40, 110);
+      합격했나(40, 100);
+
+      // 예금액 계산기
+      var 예금액 = 10000;
+      var 미래예금액 = 0;
+
+      if (예금액 >= 50000) {
+        미래예금액 = 예금액 * 1.2 * 1.2;
+      } else {
+        미래예금액 = 예금액 * 1.15 * 1.15;
+      }
+      console.log(미래예금액);
+
+      // 커피 리필 계산기
+      var first = 360;
+      var second = (first * 2) / 3;
+      var third = (second * 2) / 3;
+
+      console.log(first + second + third);
     </script>
   </body>
 </html>

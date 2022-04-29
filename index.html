@@ -68,6 +68,79 @@
 
     <span class="badge bg-dark">Dark 🔄</span>
 
+    <div class="alert alert-dangert">
+      <span id="num">5</span>초 이내 구매시 사은품 증정!
+    </div>
+
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box"><img src="img/car1.png" /></div>
+        <div class="slide-box"><img src="img/car2.png" /></div>
+        <div class="slide-box"><img src="img/car3.png" /></div>
+      </div>
+    </div>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="next">Next</button>
+    <button class="back">Back</button>
+
+    <script>
+      var a = 100;
+      $(".slide-1").on("click", () => {
+        $(".slide-container").css("transform", `translateX(0vw)`);
+        var a = 100;
+        console.log(a);
+      });
+
+      $(".slide-2").on("click", () => {
+        $(".slide-container").css("transform", `translateX(-100vw)`);
+        var a = 200;
+        console.log(a);
+      });
+
+      $(".slide-3").on("click", () => {
+        $(".slide-container").css("transform", `translateX(-200vw)`);
+        console.log(a);
+      });
+
+      $(".next").on("click", () => {
+        $(".slide-container").css("transform", `translateX(-${a}vw)`);
+        a += 100;
+
+        if (a >= 300) {
+          a = 200;
+          $(".slide-container").css("transform", `translateX(-${a}vw)`);
+          console.log(a);
+        }
+      });
+
+      $(".back").on("click", () => {
+        a -= 100;
+        $(".slide-container").css("transform", `translateX(-${a}vw)`);
+        if (a < 0) {
+          a = 0;
+          $(".slide-container").css("transform", `translateX(-${a}vw)`);
+        }
+        console.log(a);
+      });
+    </script>
+
+    <script>
+      var num = 5;
+
+      setInterval(function () {
+        num -= 1;
+        if (num >= 0) {
+          document.querySelector("#num").innerHTML = num;
+        }
+      }, 1000);
+
+      setTimeout(() => {
+        $(".alert").hide();
+      }, 5000);
+    </script>
+
     <script>
       var count = 0;
       $(".badge").on("click", function () {
@@ -109,6 +182,12 @@
         } else if (password.length < 6) {
           event.preventDefault();
           alert("비밀번호를 6자 이상으로 설정해주세요");
+        }
+        if (/\S+@\S+\.\S+/.test(email) == false) {
+          alert("이메일 형식 아님");
+        }
+        if (/[A-Z]/.test(password) == false) {
+          alert("대문자 없음요");
         }
       });
     </script>

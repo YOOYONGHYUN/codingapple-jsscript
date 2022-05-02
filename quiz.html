@@ -37,6 +37,27 @@
     </script>
 
     <script>
+      function 함수(a, b) {
+        return (a * 60 + b) * 1000;
+      }
+
+      console.log(함수(1, 30));
+      console.log(함수(2, 10));
+    </script>
+
+    <script>
+      function 함수(a, b) {
+        if (b == true) {
+          return a * 0.9 - 1.5;
+        } else {
+          return a * 0.9;
+        }
+      }
+
+      console.log(함수(70, false));
+    </script>
+
+    <script>
       // 삼육구게임
       function 삼육구게임(숫자) {
         if (숫자 % 9 == 0) {

@@ -151,6 +151,48 @@
       }
     </script>
 
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option>모자</option>
+        <option>셔츠</option>
+      </select>
+    </form>
+    <form class="container my-5 form-group">
+      <select class="form-select mt-2 size">
+        <option>95</option>
+        <option>100</option>
+      </select>
+    </form>
+
+    <script>
+      var pants = [28, 30, 32];
+      $(".form-select")
+        .eq(0)
+        .on("input", function () {
+          if ($(".form-select").eq(0).val() == "셔츠") {
+            $(".form-select").eq(1).removeClass("size");
+          } else if ($(".form-select").eq(0).val() == "바지") {
+            $(".form-select").eq(1).removeClass("size");
+            $(".form-select").eq(1).html("");
+            pants.forEach((a) => {
+              $(".form-select").eq(1).append(`<option>${a}</option>`);
+            });
+          }
+        });
+
+      $(".form-select")
+        .eq(0)
+        .on("input", function () {
+          if ($(".form-select").eq(0).val() == "모자") {
+            $(".form-select").eq(1).addClass("size");
+          }
+        });
+
+      var a = "<option>바지<option/>";
+      $(".form-select").eq(0).append(a);
+    </script>
+
     <div style="height: 1000px"></div>
     <script>
       var a = 100;

@@ -103,6 +103,19 @@
       var third = (second * 2) / 3;
 
       console.log(first + second + third);
+
+      //for 퀴즈
+      var 출석부 = ["흥민", "영희", "철수", "재석"];
+
+      function 이름찾기(a) {
+        출석부.forEach((i) => {
+          if (a == i) {
+            return console.log("있어요");
+          }
+        });
+      }
+
+      이름찾기("종림");
     </script>
   </body>
 </html>
